@@ -96,16 +96,12 @@
     }
     </style>
 
-<style>
-a.c1 {font-weight: normal;}
-    </style>
-  </head>
   <body class="" id="grid">
     <div class="browser-landing" id="main">
       <div class="compact marquee">
         <div id="div_start">
           <button id="start_button" onclick="startButton(event)"><img alt="Start" id="start_img"
-          src="https://google.com/intl/en/chrome/assets/common/images/content/mic.gif"></button>
+          src="https://www.google.com/intl/en/chrome/assets/common/images/content/mic.gif"></button>
         </div>
         <div id="results">
           <span class="final" id="final_span"></span> <span class="interim" id=
@@ -137,33 +133,34 @@ a.c1 {font-weight: normal;}
             </select>
         </div>
       </div>
-    </div><script src="https://google.com/intl/en/chrome/assets/common/js/chrome.min.js">
-</script> <script>
+    </div>
+
+<script src="https://www.google.com/intl/en/chrome/assets/common/js/chrome.min.js">
+</script> 
+
+<script>
 var chrmMenuBar = new chrm.ui.MenuBar();
       chrmMenuBar.decorate('nav');
       var chrmLogo = new chrm.ui.Logo('logo');
-
       var chrmscroll = new chrm.ui.SmoothScroll('scroll');
       chrmscroll.init();
+      window.___gcfg = { lang: 'en' };
+      (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
 
-
-
-  window.___gcfg = { lang: 'en' };
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-
-      var doubleTracker = new gweb.analytics.DoubleTrack('floodlight', {
+ var doubleTracker = new gweb.analytics.DoubleTrack('floodlight', {
           src: 2542116,
           type: 'clien612',
           cat: 'chrom0'
       });
       doubleTracker.track();
-
       doubleTracker.trackClass('doubletrack', true);
-    </script> <script>
+    </script>
+
+<script>
 var langs =
 [['Afrikaans',       ['af-ZA']],
  ['Bahasa Indonesia',['id-ID']],
@@ -237,12 +234,12 @@ var langs =
  ['ภาษาไทย',         ['th-TH']]];
 
 for (var i = 0; i < langs.length; i++) {
-  select_language.options[i] = new Option(langs[i][0], i);
-}
-select_language.selectedIndex = 7;
-updateCountry();
-select_dialect.selectedIndex = 6;
-showInfo('info_start');
+   select_language.options[i] = new Option(langs[i][0], i);
+   }
+   select_language.selectedIndex = 7;
+   updateCountry();
+   select_dialect.selectedIndex = 6;
+   showInfo('info_start');
 
 function updateCountry() {
   for (var i = select_dialect.options.length - 1; i >= 0; i--) {
@@ -271,17 +268,17 @@ if (!('webkitSpeechRecognition' in window)) {
   recognition.onstart = function() {
     recognizing = true;
     showInfo('info_speak_now');
-    start_img.src = 'https://google.com/intl/en/chrome/assets/common/images/content/mic-animate.gif';
+    start_img.src = 'https://www.google.com/intl/en/chrome/assets/common/images/content/mic-animate.gif';
   };
 
   recognition.onerror = function(event) {
     if (event.error == 'no-speech') {
-      start_img.src = 'https://google.com/intl/en/chrome/assets/common/images/content/mic.gif';
+      start_img.src = 'https://www.google.com/intl/en/chrome/assets/common/images/content/mic.gif';
       showInfo('info_no_speech');
       ignore_onend = true;
     }
     if (event.error == 'audio-capture') {
-      start_img.src = 'https://google.com/intl/en/chrome/assets/common/images/content/mic.gif';
+      start_img.src = 'https://www.google.com/intl/en/chrome/assets/common/images/content/mic.gif';
       showInfo('info_no_microphone');
       ignore_onend = true;
     }
@@ -300,7 +297,7 @@ if (!('webkitSpeechRecognition' in window)) {
     if (ignore_onend) {
       return;
     }
-    start_img.src = 'https://google.com/intl/en/chrome/assets/common/images/content/mic.gif';
+    start_img.src = 'https://www.google.com/intl/en/chrome/assets/common/images/content/mic.gif';
     if (!final_transcript) {
       showInfo('info_start');
       return;
@@ -402,7 +399,7 @@ function startButton(event) {
   ignore_onend = false;
   final_span.innerHTML = '';
   interim_span.innerHTML = '';
-  start_img.src = 'https://google.com/intl/en/chrome/assets/common/images/content/mic-slash.gif';
+  start_img.src = 'https://www.google.com/intl/en/chrome/assets/common/images/content/mic-slash.gif';
   showInfo('info_allow');
   showButtons('none');
   start_timestamp = event.timeStamp;
