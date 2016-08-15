@@ -1,15 +1,11 @@
 <html>
-
 <head>
-
 </head>
-
-
 <body>
  <!-- CSS Styles -->
 <style>
   .speech {border: 1px solid #DDD; width: 300px; padding: 0; margin: 0}
-  .speech input {border: 0; width: 240px; display: inline-block; height: 30px;}
+  .speech input {border: 0; width: 240px; display: inline-block; height: 300px;}
   .speech img {float: right; width: 40px }
 </style>
  
@@ -24,32 +20,29 @@
 <!-- HTML5 Speech Recognition API -->
 <script>
   function startDictation() {
- 
     if (window.hasOwnProperty('webkitSpeechRecognition')) {
- 
       var recognition = new webkitSpeechRecognition();
- 
       recognition.continuous = true;
       recognition.interimResults = false;
- 
       recognition.lang = "en-US";
       recognition.start();
  
       recognition.onresult = function(e) {
-        document.getElementById('transcript').value
-                                 = e.results[0][0].transcript;
+        document.getElementById('transcript').value= e.results[0][0].transcript;
         recognition.stop();
         document.getElementById('labnol').submit();
       };
  
       recognition.onerror = function(e) {
         recognition.stop();
-      }
+        }
  
     }
   }
 </script>
 
+
+<!-- more API -->
  <style>
 #info {
     font-size: 20px;
@@ -102,7 +95,8 @@
     margin: 0 70px;
     }
     </style>
-    <style>
+
+<style>
 a.c1 {font-weight: normal;}
     </style>
   </head>
